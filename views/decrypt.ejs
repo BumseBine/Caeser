@@ -1,0 +1,47 @@
+<html lang="en"><head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Caeser encryption for the Mint-Day at the Carl-Miele-Berufskolleg">
+  <meta name="author" content="Mauritz Funke (GOI91)">
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/icon" />
+  <link rel="icon" href="/images/favicon.ico" type="image/icon" />
+  <title>Caeser Verschlüsselung</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+      
+      <body>
+        <%- include ./partials/navbar %>
+        <!-- Page Content -->
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <h1 class="mt-5">Caeser Entschlüsselung im Internet</h1>
+              <p class="lead">Gebe unten den zu entschlüsselden Text ein und klicke auf Start</p>
+            </div>
+            <form class="col-lg-12 text-center" action="/decrypt" method="post">
+                <label for="text">Zu entschlüsselden Text</label>
+                <input required="true" class="form-control" type="text" name="text" id="text" placeholder="Verschlüsselter Text">
+                <label for="number">Verschiebung des Textes</label>
+                <input min="-24" max="24" class="form-control" type="number" name="number" id="number" placeholder="Verschiebung des Textes">
+                <button required="true" type="submit" class="m-3 btn btn-success">Start</button>
+            </form>
+          </div>
+                <% if(!(typeof encrypt === 'undefined')) { %>
+                    <hr>
+                    <div class="jumbotron jumbotron-fluid">
+                            <div class="text-center">
+                    <h3>Ausgabe</h3>
+                    <p>Der verschlüsselte Text lautet <span class="text-muted"><%- plain %></span></p>
+                    <p>Der unverschlüsselte Text lautet <span class="text-muted"><%- encrypt %></span></p>
+                </div>
+            </div>
+                <% } %>
+    
+    
+    
+        </div>  
+      </body></html>

@@ -1,0 +1,17 @@
+{
+  "name": "caeser-web",
+  "version": "1.0.0",
+  "description": "Caeser encryption for the Mint-Day at the Carl-Miele-Berufskolleg",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "author": "Mauritz Funke (GOI91)",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1"
+  }
+}
